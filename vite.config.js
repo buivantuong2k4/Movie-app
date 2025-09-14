@@ -4,8 +4,13 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-
-  plugins: [react(),
-    ],
-
+  plugins: [
+    react(),
+    tailwindcss()
+  ],
+  preview: {
+    host: '0.0.0.0',                     // cho phép truy cập từ Render
+    port: process.env.PORT || 4173,      // dùng cổng Render cấp
+    allowedHosts: ['.onrender.com']      // cho phép domain *.onrender.com
+  }
 })
