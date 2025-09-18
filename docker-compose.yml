@@ -1,0 +1,7 @@
+services:
+  web:
+    build: .
+    restart: unless-stopped
+    # CHỈ mở nội bộ để đi qua Nginx host (an toàn hơn)
+    ports:
+      - '127.0.0.1:8081:80'
